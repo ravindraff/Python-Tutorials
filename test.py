@@ -1,0 +1,21 @@
+from selenium import webdriver
+import time
+browser = webdriver.Firefox(executable_path='D:\Python Projects\drivers\geckodriver.exe')
+# Step 2) Navigate to Facebook
+browser.get("http://www.seleniumbymahesh.com/")
+print("Title:", browser.title)
+print("Current browser:", browser.current_url)
+browser.get("http://www.facebook.com")
+print("Title:", browser.title)
+print("Current browser:", browser.current_url)
+browser.back()
+print("After back navigation browser:", browser.current_url)
+browser.forward()
+print("After forward navigation browser:", browser.current_url)
+browser.get('https://www.google.com/')
+browser.find_element_by_name("q").send_keys("Mahesh Babu")
+time.sleep(5)
+browser.find_element_by_name("btnK").click()
+time.sleep(5)
+browser.find_element_by_class_name("LC20lb").click()
+#browser.close()
